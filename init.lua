@@ -1,0 +1,1 @@
+dofile("WiFiLamp.lua")
