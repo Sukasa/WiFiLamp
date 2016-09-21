@@ -22,14 +22,14 @@ function WaitWifi()
 end
 
 function On()
-  gpio.write(7, gpio.LOW)
+  gpio.write(7, gpio.HIGH)
 end
 
 function Off()
-  gpio.mode(7, gpio.INPUT, gpio.FLOAT)
+  gpio.write(7, gpio.LOW)
 end
 
-Off()
+gpio.mode(7, gpio.OUTPUT)
 On()
 wifi.setmode(wifi.STATION)
 wifi.sta.config(Config.SSID, Config.PW)
